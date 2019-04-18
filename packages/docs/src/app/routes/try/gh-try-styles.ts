@@ -49,7 +49,7 @@ register("my-element", MyElement, {
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-styles?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-styles?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
 
       <ol>
         <li>
@@ -84,20 +84,6 @@ register("my-element", MyElement, {
     background-color: \${count > 1 ? "pink" : "initial"};
   }
 </style>
-              `}
-            </template>
-          </code-sample>
-        </li>
-
-        <li>
-          <p><strong>Register the new component with the browser</strong></p>
-
-          <p>In index.ts, replace the existing call to register with the following code:</p>
-
-          <code-sample type="js">
-            <template preserve-content>
-              ${`
-register("my-element", MyElement);
               `}
             </template>
           </code-sample>

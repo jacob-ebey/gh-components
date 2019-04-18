@@ -49,7 +49,7 @@ register("my-element", MyElement, {
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-state-events?file=index.ts&embed=1&view=editor"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-state-events?file=index.ts&embed=1&view=editor"></gh-stackblitz>
 
       <ol>
         <li>

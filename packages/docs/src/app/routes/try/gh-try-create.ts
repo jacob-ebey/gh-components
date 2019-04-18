@@ -31,7 +31,7 @@ register("my-element", );
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-create?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
 
       <ol>
         <li>
