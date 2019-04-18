@@ -97,9 +97,9 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
       has-items="true"
       theme="primary"
     >
-      <gh-appbar-item href="#core">Core</gh-appbar-item>
-      <gh-appbar-item href="#components">Components</gh-appbar-item>
       <gh-appbar-item href="#try">Try</gh-appbar-item>
+      <gh-appbar-item href="#core">Core</gh-appbar-item>
+      <!-- <gh-appbar-item href="#components">Components</gh-appbar-item> -->
       <gh-appbar-item href="https://github.com/jacob-ebey/gh-components"><gh-icon-github></gh-icon-github></gh-appbar-item>
     </gh-appbar>
     <main>

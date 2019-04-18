@@ -4,8 +4,7 @@
   "scripts": {
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
-    "postinstall": "lerna bootstrap",
-    "deploy": "lerna publish -- --access public"
+    "postinstall": "lerna bootstrap"
   },
   "dependencies": {
     "lerna": "^3.13.3",
