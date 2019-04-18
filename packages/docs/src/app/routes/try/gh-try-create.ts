@@ -1,9 +1,9 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 import "@kuscamara/code-sample";
 
-import "../../components/gh-button";
-import "../../components/gh-h1";
-import "../../components/gh-stackblitz";
+import "@gh-components/components/dist/gh-button";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-stackblitz";
 import "./gh-try-page";
 
 function TryCreate() {
@@ -17,7 +17,7 @@ function TryCreate() {
         <template preserve-content>
           ${`
 // TODO: Import html helper function and register
-import {} from "gh-components-core";
+import {} from "@gh-components/core";
 
 // TODO: Return content from your functional component
 function MyElement() {
@@ -42,7 +42,7 @@ register("my-element", );
           <code-sample type="js">
             <template preserve-content>
               ${`
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
               `}
             </template>
           </code-sample>
@@ -88,7 +88,7 @@ register("my-element", MyElement);
       <code-sample type="js">
         <template preserve-content>
           ${`
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
 function MyElement() {
   return html\`

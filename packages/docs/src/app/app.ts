@@ -1,11 +1,14 @@
 import Navigo from "navigo";
 
-import { ComponentHooks, html, register, nothing } from "gh-components-core";
+import { ComponentHooks, html, register, nothing } from "@gh-components/core";
 
-import "./components/gh-appbar";
-import "./components/gh-contentpage";
-import { getTheme } from "./components/theme";
-import "./components/icons/gh-icon-github";
+import "@gh-components/components/dist/gh-appbar";
+import "@gh-components/components/dist/gh-contentpage";
+import "@gh-components/components/dist/icons/gh-icon-github";
+import { getTheme } from "@gh-components/components/dist/theme";
+import docs from "@gh-components/components/dist/docs.json";
+
+console.log(docs);
 
 const router = new Navigo(undefined, true, "#");
 
@@ -92,11 +95,11 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
       label="@gh-components"
       label-href="#"
       has-items="true"
-      theme="${route === "home" ? "primary" : "dark"}"
+      theme="primary"
     >
-      <gh-appbar-item href="#try">Try</gh-appbar-item>
       <gh-appbar-item href="#core">Core</gh-appbar-item>
       <gh-appbar-item href="#components">Components</gh-appbar-item>
+      <gh-appbar-item href="#try">Try</gh-appbar-item>
       <gh-appbar-item href="https://github.com/jacob-ebey/gh-components"><gh-icon-github></gh-icon-github></gh-appbar-item>
     </gh-appbar>
     <main>

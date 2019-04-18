@@ -1,4 +1,4 @@
-import { ComponentHooks, html, register } from "gh-components-core";
+import { ComponentHooks, html, register } from "@gh-components/core";
 
 function DataViewer({ url }, { useState, useEffect }: ComponentHooks) {
   const [data, setData] = useState(null);

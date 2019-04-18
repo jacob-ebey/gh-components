@@ -1,7 +1,7 @@
 {
-  "name": "@gh-components/core",
+  "name": "@gh-components/components",
   "version": "0.0.0-alpha.3",
-  "description": "A set core library bassed on lit-html for building your own web components.",
+  "description": "A set of web components for building out an application.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "keywords": [],
@@ -10,15 +10,14 @@
   "scripts": {
     "start": "npm run build",
     "dev": "tsc -w",
-    "build": "tsc"
+    "build": "tsc && npm run docs",
+    "docs": "node node_modules/@gh-components/docgen/dist"
   },
   "dependencies": {
-    "camelcase": "^5.3.1",
-    "camel-to-kebab": "^1.1.0",
-    "lit-html": "^1.0.0",
-    "shadow-css": "^0.1.1"
+    "@gh-components/core": "0.0.0-alpha.3"
   },
   "devDependencies": {
+    "@gh-components/docgen": "0.0.0-alpha.3",
     "typescript": "^3.4.3"
   }
 }

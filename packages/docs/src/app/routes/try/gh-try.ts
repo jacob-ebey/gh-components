@@ -1,9 +1,9 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
-import "../../components/gh-button";
-import "../../components/gh-listmenu";
-import "../../components/gh-stackblitz";
-import "../../components/gh-warningcard";
+import "@gh-components/components/dist/gh-button";
+import "@gh-components/components/dist/gh-listmenu";
+import "@gh-components/components/dist/gh-stackblitz";
+import "@gh-components/components/dist/gh-warningcard";
 
 import "./gh-try-page";
 

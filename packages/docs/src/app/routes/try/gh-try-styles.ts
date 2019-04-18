@@ -1,9 +1,9 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 import "@kuscamara/code-sample";
 
-import "../../components/gh-button";
-import "../../components/gh-h1";
-import "../../components/gh-stackblitz";
+import "@gh-components/components/dist/gh-button";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-stackblitz";
 import "./gh-try-page";
 
 function TryStyles() {
@@ -16,7 +16,7 @@ function TryStyles() {
       <code-sample type="js">
         <template preserve-content>
           ${`
-import { ComponentHooks, html, register } from "gh-components-core";
+import { ComponentHooks, html, register } from "@gh-components/core";
 
 interface MyElementProps {
   person?: string;
@@ -81,7 +81,7 @@ register("my-element", MyElement, {
 <style>
   :host button {
     height: 30px;
-    background-color: \${count > 1 ? "pink" : "initial"};
+    background-color: \$\{count \> 1 \? "pink" \: "initial"\};
   }
 </style>
               `}
@@ -97,7 +97,7 @@ register("my-element", MyElement, {
       <code-sample type="js">
         <template preserve-content>
           ${`
-import { ComponentHooks, html, register } from "gh-components-core";
+import { ComponentHooks, html, register } from "@gh-components/core";
 
 interface MyElementProps {
   person?: string;
@@ -120,7 +120,7 @@ function MyElement(
     <style>
       :host button {
         height: 30px;
-        background-color: \${count > 1 ? "pink" : "initial"};
+        background-color: \$\{count \> 1 \? "pink" \: "initial"\};
       }
     </style>
   \`;

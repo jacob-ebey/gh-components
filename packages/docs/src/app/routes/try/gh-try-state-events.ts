@@ -1,9 +1,9 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 import "@kuscamara/code-sample";
 
-import "../../components/gh-button";
-import "../../components/gh-h1";
-import "../../components/gh-stackblitz";
+import "@gh-components/components/dist/gh-button";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-stackblitz";
 import "./gh-try-page";
 
 function TryStateEvents() {
@@ -20,7 +20,7 @@ function TryStateEvents() {
         <template preserve-content>
           ${`
 // TODO: Import ComponentHooks interface
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
 interface MyElementProps {
   person?: string;
@@ -60,7 +60,7 @@ register("my-element", MyElement, {
           <code-sample type="js">
             <template preserve-content>
               ${`
-import { ComponentHooks, html, register } from "gh-components-core";
+import { ComponentHooks, html, register } from "@gh-components/core";
               `}
             </template>
           </code-sample>
@@ -134,7 +134,7 @@ return html\`
       <code-sample type="js">
         <template preserve-content>
           ${`
-import { ComponentHooks, html, register } from "gh-components-core";
+import { ComponentHooks, html, register } from "@gh-components/core";
 
 interface MyElementProps {
   person?: string;

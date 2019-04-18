@@ -1,14 +1,15 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 import "@kuscamara/code-sample";
 
+import "@gh-components/components/dist/gh-contentpage";
+import "@gh-components/components/dist/gh-hero";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-h2";
+import "@gh-components/components/dist/gh-h3";
+import "@gh-components/components/dist/layout/gh-col";
+import "@gh-components/components/dist/layout/gh-row";
+
 import "../components/custom-dataviewer";
-import "../components/gh-contentpage";
-import "../components/gh-hero";
-import "../components/gh-h1";
-import "../components/gh-h2";
-import "../components/gh-h3";
-import "../components/layout/gh-col";
-import "../components/layout/gh-row";
 
 function Counter(_, { useState }) {
   const [count, setCount] = useState(0);
@@ -71,8 +72,8 @@ register("my-expensive-compute", ExpensiveCompute);
 
 function Core() {
   return html`
-    <gh-hero theme="dark">
-      <gh-hero-h1>GrowHub Core</gh-hero-h1>
+    <gh-hero theme="light">
+      <gh-hero-h1>GrowHub Components Core</gh-hero-h1>
       <gh-hero-h2>A tiny wrapper around the Web Components standard allowing for dead simple component development</gh-hero-h2>
     </gh-hero>
     
@@ -87,8 +88,13 @@ function Core() {
             creating and updating the DOM.
           </p>
           <p>
-            Never have to worry about bloat with lit-html weighing in at a respectable 3.3 kB minified + gzipped and GrowHub Components
-            weighing in at a respectable 0.8 kB minified + gzipped for a total of 4.1 kB.
+            Never have to worry about bloat with GrowHub Components weighing in at a very tiny size:
+            <object type="image/svg+xml" data="https://badgen.net/bundlephobia/min/gh-components-core" class="badge">
+              15.6 kB
+            </object>
+            <object type="image/svg+xml" data="https://badgen.net/bundlephobia/minzip/gh-components-core" class="badge">
+              5.2 kB
+            </object>
           </p>
         </gh-col>
     
@@ -314,6 +320,12 @@ register("custom-dataviewer", DataViewer, ["url"]);
       <p>Output:</p>
       <custom-dataviewer url="https://jsonplaceholder.typicode.com/todos/1"></custom-dataviewer>
     </gh-contentpage>
+
+    <style>
+      :host .badge {
+        vertical-align: bottom;
+      }
+    </style>
   `;
 }
 

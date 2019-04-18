@@ -1,13 +1,13 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 import "@kuscamara/code-sample";
 
-import "../components/gh-contentpage";
-import "../components/gh-hero";
-import "../components/gh-h1";
-import "../components/gh-h2";
-import "../components/layout/gh-col";
-import "../components/layout/gh-row";
-import { getTheme } from "../components/theme";
+import "@gh-components/components/dist/gh-contentpage";
+import "@gh-components/components/dist/gh-hero";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-h2";
+import "@gh-components/components/dist/layout/gh-col";
+import "@gh-components/components/dist/layout/gh-row";
+import { getTheme } from "@gh-components/components/dist/theme";
 
 function Hello({ name }) {
   return html`
@@ -84,7 +84,7 @@ function Home() {
         <code-sample type="js">
           <template preserve-content>
             ${`
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
 function Hello({ name }) {
   return html\`

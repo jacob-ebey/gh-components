@@ -1,13 +1,13 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
-import "../../components/gh-contentpage";
-import "../../components/gh-h1";
-import "../../components/gh-listmenu";
-import "../../components/gh-warningcard";
-import "../../components/layout/gh-col";
-import "../../components/layout/gh-row";
-import "../../components/icons/gh-icon-alert";
-import { getTheme } from "../../components/theme";
+import "@gh-components/components/dist/gh-contentpage";
+import "@gh-components/components/dist/gh-h1";
+import "@gh-components/components/dist/gh-listmenu";
+import "@gh-components/components/dist/gh-warningcard";
+import "@gh-components/components/dist/layout/gh-col";
+import "@gh-components/components/dist/layout/gh-row";
+import "@gh-components/components/dist/icons/gh-icon-alert";
+import { getTheme } from "@gh-components/components/dist/theme";
 
 function TryPage({ route, header }) {
   const { palette } = getTheme();

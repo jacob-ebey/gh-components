@@ -4,10 +4,10 @@
   "scripts": {
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "deploy": "lerna publish"
   },
-  "devDependencies": {
-    "lerna": "^3.13.2"
-  },
-  "name": "gh-components"
+  "workspaces": [
+    "packages/*"
+  ]
 }

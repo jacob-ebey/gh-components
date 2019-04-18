@@ -1,7 +1,7 @@
-import { html, register } from "gh-components-core";
+import { html, register } from "@gh-components/core";
 
-import "../../components/gh-contentpage";
-import "../../components/gh-h1";
+import "@gh-components/components/dist/gh-contentpage";
+import "@gh-components/components/dist/gh-h1";
 
 function Components() {
   return html`
