@@ -1064,18 +1064,6 @@
             </template>
           </code-sample>
         </li>
-
-        <li>
-          <p><strong>Register the new component with the browser</strong></p>
-
-          <p>In index.ts, replace the existing call to register with the following code:</p>
-
-          <code-sample type="js">
-            <template preserve-content>
-              ${'\nregister("my-element", MyElement);\n              '}
-            </template>
-          </code-sample>
-        </li>
       </ol>
 
       <p>Here’s the completed code for this step:</p>
@@ -1266,4 +1254,4 @@
       <gh-h1>Coming Soon!</gh-h1>
     </gh-contentpage>
   `})}]);
-//# sourceMappingURL=main.4bf09cd6423919cf67a6.js.map
+//# sourceMappingURL=main.ad52af1ad09fe5ef4312.js.map
