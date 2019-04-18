@@ -1,6 +1,6 @@
 {
   "name": "@gh-components/core",
-  "version": "0.0.0-alpha.3",
+  "version": "0.0.1-alpha.0",
   "description": "A set core library bassed on lit-html for building your own web components.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,8 +13,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "camelcase": "^5.3.1",
     "camel-to-kebab": "^1.1.0",
+    "camelcase": "^5.3.1",
     "lit-html": "^1.0.0",
     "shadow-css": "^0.1.1"
   },
