@@ -781,7 +781,7 @@
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-create?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
 
       <ol>
         <li>
@@ -946,7 +946,7 @@
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-state-events?file=index.ts&embed=1&view=editor"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-state-events?file=index.ts&embed=1&view=editor"></gh-stackblitz>
 
       <ol>
         <li>
@@ -1038,7 +1038,7 @@
 
       <p>Click <strong>Launch Code Editor</strong> to edit the starting code. When you’re ready to see your code in action, click <strong>Preview</strong>.</p>
 
-      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-styles?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
+      <gh-stackblitz src="https://stackblitz.com/edit/gh-components-core-try-styles?file=index.ts&embed=1&hideExplorer=1&hideNavigation=1"></gh-stackblitz>
 
       <ol>
         <li>
@@ -1266,4 +1266,4 @@
       <gh-h1>Coming Soon!</gh-h1>
     </gh-contentpage>
   `})}]);
-//# sourceMappingURL=main.153044d0aa638fd7db74.js.map
+//# sourceMappingURL=main.4bf09cd6423919cf67a6.js.map
