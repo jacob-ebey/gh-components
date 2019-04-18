@@ -1,0 +1,36 @@
+{
+  "name": "gh-components-docs",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacob-ebey/gh-components.git"
+  },
+  "scripts": {
+    "start": "webpack-dev-server -d --content-base ./docs",
+    "build": "webpack -p",
+    "deploy": "gh-pages -d docs"
+  },
+  "dependencies": {
+    "@kuscamara/code-sample": "^3.0.2",
+    "@webcomponents/webcomponentsjs": "^1.0.0",
+    "gh-components-core": "0.0.0-alpha.1",
+    "lit-html": "^1.0.0",
+    "shadow-css": "^0.1.1",
+    "navigo": "^7.1.2"
+  },
+  "devDependencies": {
+    "@types/navigo": "^7.0.1",
+    "babel-plugin-template-html-minifier": "^2.3.0",
+    "clean-webpack-plugin": "^1.0.1",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^1.2.3",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.1",
+    "webpack": "^4.29.1",
+    "webpack-async-chunk-names-plugin": "^0.1.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
