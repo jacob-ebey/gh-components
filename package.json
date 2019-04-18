@@ -5,7 +5,11 @@
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
     "postinstall": "lerna bootstrap",
-    "deploy": "lerna publish"
+    "deploy": "lerna publish -- --access public"
+  },
+  "dependencies": {
+    "lerna": "^3.13.3",
+    "yarn": "^1.15.2"
   },
   "workspaces": [
     "packages/*"
