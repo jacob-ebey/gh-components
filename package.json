@@ -1,0 +1,13 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.13.2"
+  },
+  "name": "gh-components"
+}
