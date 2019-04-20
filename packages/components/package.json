@@ -1,6 +1,6 @@
 {
   "name": "@gh-components/components",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "A set of web components for building out an application.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -14,10 +14,10 @@
     "docs": "node node_modules/@gh-components/docgen/dist"
   },
   "dependencies": {
-    "@gh-components/core": "^0.0.1-alpha.0"
+    "@gh-components/core": "^0.0.1-alpha.1"
   },
   "devDependencies": {
-    "@gh-components/docgen": "^0.0.1-alpha.0",
+    "@gh-components/docgen": "^0.0.1-alpha.1",
     "typescript": "^3.4.3"
   }
 }
