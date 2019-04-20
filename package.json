@@ -6,7 +6,7 @@
     "build": "lerna run build --stream",
     "postinstall": "lerna bootstrap",
     "deploy-packages": "lerna publish --canary -- --access public",
-    "deploy-sites": "lerna run publish"
+    "deploy-sites": "lerna run deploy"
   },
   "dependencies": {
     "lerna": "^3.13.3"
