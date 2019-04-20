@@ -21,17 +21,17 @@ export interface AppBarProps {
   /**
    * The theme of the toolbar.
    */
-  theme?: "dark" | "light" | "primary";
+  theme?: "dark" | "light" | "primary" | "default";
 }
 
 /**
- * [gh-appbar] An appbar component.
+ * [gh-appbar] A responsive appbar component.
  */
 export function AppBar({
   label = "",
   labelHref,
   hasItems,
-  theme = "dark"
+  theme = "default"
 }: AppBarProps, {
   useMemo
 }: ComponentHooks) {
@@ -43,15 +43,18 @@ export function AppBar({
         bgColor: palette.dark,
         fontColor: palette.white
       };
-      case "light": return {
-        bgColor: palette.light,
-        fontColor: palette.primary
-      };
-      case "primary":
-      default: return {
+      case "primary": return {
         bgColor: palette.primary,
         fontColor: palette.white
       };
+      case "light": return {
+        bgColor: palette.light,
+        fontColor: "inherit"
+      };
+      default: return {
+        bgColor: palette.light,
+        fontColor: palette.primary
+      };      
     }
   }, [theme, palette]);
 

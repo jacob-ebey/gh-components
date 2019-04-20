@@ -20,4 +20,8 @@ function IconAngleUp({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-angle-up", IconAngleUp);
+register("gh-icon-angle-up", IconAngleUp, {
+  size: {
+    type: String
+  }
+});

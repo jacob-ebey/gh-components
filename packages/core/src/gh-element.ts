@@ -30,11 +30,12 @@ interface Memo<T = any> extends DepsObj {
 export const register = <TProps = {}>(
   elementName: string,
   component: Component<TProps>,
-  properties: PropertyDeclarations<TProps> = {} as TProps
+  properties: PropertyDeclarations<TProps> = {} as TProps,
+  ElementType: any = HTMLElement
 ) => {
   const propertyKeys = (properties ? Object.getOwnPropertyNames(properties) : []);
 
-  class GhElement extends HTMLElement {
+  class GhElement extends ElementType {
     private _afterRender: Array<() => void>;
     private _beforeRender: Array<() => void>;
 
@@ -51,8 +52,8 @@ export const register = <TProps = {}>(
 
     private _needsUpdate: boolean;
 
-    constructor() {
-      super();
+    constructor(...args: any[]) {
+      super(...args);
 
       this._afterRender = [];
       this._beforeRender = [];
@@ -137,10 +138,10 @@ export const register = <TProps = {}>(
         (style as any).cssText = newStyles || "";
       }
     }
-    
+
     protected afterRender = () => {
       this._afterRender.forEach(f => f());
-      
+
       this._afterRender = [];
     }
 
@@ -153,7 +154,7 @@ export const register = <TProps = {}>(
           if (lastEffect.cleanup) {
             lastEffect.cleanup();
           }
-          
+
           const cleanup: any = effect();
           this._effects[index] = {
             deps,
@@ -202,11 +203,11 @@ export const register = <TProps = {}>(
       this._needsUpdate = true;
 
       const run = () => {
+        this.beforeRender();
         if (this._needsUpdate) {
-          this.beforeRender();
           this.render();
           this._needsUpdate = false;
-          
+
           this.afterRender();
         }
 
@@ -246,5 +247,9 @@ export const register = <TProps = {}>(
     });
   })
 
-  customElements.define(elementName, GhElement);
+  try {
+    customElements.define(elementName, GhElement);
+  } catch (e) {
+    console.error(`Failed to register element: ${elementName}`);
+  }
 }

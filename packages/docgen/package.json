@@ -15,6 +15,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "camel-to-kebab": "^1.1.0",
     "readts": "^0.2.0"
   },
   "devDependencies": {

@@ -11,4 +11,3 @@ import "./gh-h2";
 import "./gh-h3";
 import "./gh-stackblitz";
 import "./gh-warningcard";
-export * from "./theme";

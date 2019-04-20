@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as readts from "readts";
+import camelToKebabCase from "camel-to-kebab";
 
 const outDir = path.join(process.cwd(), "dist/docs.json");
 const configPath = path.join(process.cwd(), "tsconfig.json");
@@ -36,7 +37,6 @@ mod.functionList.map((c) => {
     const interfaceNames = [`${c.name}Props`, `I${c.name}Props`];
 
     const i = mod.interfaceList.findIndex(i => interfaceNames.some(n => n === i.name));
-    console.log(interfaceNames);
     if (i >= 0) {
       components.push({
         function: c,
@@ -48,7 +48,7 @@ mod.functionList.map((c) => {
 
 console.log(`Found ${components.length} potential component(s)...`);
 
-const docs = [];
+let docs = [];
 
 components.forEach(c => {
   let doc = c.function.signatureList[0].doc;
@@ -72,10 +72,28 @@ components.forEach(c => {
   if (elementName) {
     const properties = c.interface.propertyList
       ? c.interface.propertyList.map(p => {
+        let doc = p.doc;
+        let name = camelToKebabCase(p.name);
+
+        if (doc) {
+          const match = doc.match(/^\[(\w+[\-\w+]+)\]/s);
+          if (match && match.length > 1) {
+            name = match[1];
+      
+            let newDoc = "";
+            for (let i = 0; i < doc.length; i++) {
+              if (i < match.index || i > match.index + match[0].length) {
+                newDoc += doc[i];
+              }
+            }
+            doc = newDoc;
+          }
+        }
+
         return {
-          name: p.name,
-          type: p.type.name || (p.type.unionOf && p.type.unionOf.reduce((p2, c2) => p2 + c2.name, "")),
-          doc: p.doc
+          name,
+          doc,
+          type: p.type.name || (p.type.unionOf && p.type.unionOf.reduce((p2, c2, i) => p2 + (i > 0 ? " | " : "") + c2.name, ""))
         };
       })
       : [];
@@ -89,6 +107,13 @@ components.forEach(c => {
     });
   }
 });
+
+const docNames = new Set();
+docs = docs.filter(d => {
+  const res = !docNames.has(d.elementName);
+  docNames.add(d.elementName);
+  return res;
+})
 
 if (docs.length < components.length) {
   console.log(`Did not generate docs for ${components.length - docs.length} potential component(s)`);

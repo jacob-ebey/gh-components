@@ -20,4 +20,8 @@ function IconBars({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-bars", IconBars);
+register("gh-icon-bars", IconBars, {
+  size: {
+    type: String
+  }
+});

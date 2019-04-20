@@ -9,6 +9,9 @@ export interface AppBarItemProps {
   href?: string;
 }
 
+/**
+ * [gh-appbar-item] A menu item for the appbar.
+ */
 export function AppBarItem({ href }) {
   const { breakpoints } = getTheme();
 

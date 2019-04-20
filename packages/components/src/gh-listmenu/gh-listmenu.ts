@@ -28,8 +28,8 @@ export function ListMenu({ breakpoint }: ListMenuProps, { useCallback, useState 
     </div>
 
     <gh-card class="toggle">
-      ${open ? html`<gh-icon-angle-up @click=${toggleCallback}></gh-icon-angle-up>`
-        : html`<gh-icon-angle-down @click=${toggleCallback}></gh-icon-angle-down>`}
+      ${open ? html`<gh-icon-angle-up size="1.25em" @click=${toggleCallback}></gh-icon-angle-up>`
+        : html`<gh-icon-angle-down size="1.25em" @click=${toggleCallback}></gh-icon-angle-down>`}
       <span>Menu</span>
     </gh-card>
     <style>
@@ -54,7 +54,12 @@ export function ListMenu({ breakpoint }: ListMenuProps, { useCallback, useState 
       }
 
       :host .toggle span {
-        margin: 0 0 0 1em;
+        margin: 0 0 0 0.5em;
+      }
+
+      :host .toggle gh-icon-angle-down, :host .toggle gh-icon-angle-up {
+        color: ${palette.primary};
+        cursor: pointer;
       }
 
       ${breakpoint === "portrait" ? `
@@ -64,7 +69,7 @@ export function ListMenu({ breakpoint }: ListMenuProps, { useCallback, useState 
           }
 
           :host .wrapper--open {
-            z-index: 101;
+            z-index: 99;
             position: absolute;
             display: block;
             top: 100%;

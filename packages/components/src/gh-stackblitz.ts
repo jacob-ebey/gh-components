@@ -5,12 +5,16 @@ import "./icons/gh-icon-cogs";
 import { getTheme } from "./theme";
 
 export interface StackblitzProps {
+  /**
+   * The url with embeding options set.
+   */
+  src: string;
 }
 
 /**
  * [gh-stackblitz] A component for displaying an embeded stackblitz editor.
  */
-export function Stackblitz({ src }, { useCallback, useState }: ComponentHooks) {
+export function Stackblitz({ src }: StackblitzProps, { useCallback, useState }: ComponentHooks) {
   const { palette } = getTheme();
 
   const [open, setOpen] = useState(false);
@@ -23,7 +27,7 @@ export function Stackblitz({ src }, { useCallback, useState }: ComponentHooks) {
   return html`
     ${open ? html`
       <iframe src="${src}"></iframe>
-      <gh-button class="fullscreen-button" padding="5px 0.5em" @click=${toggleFullscreenCallback}>
+      <gh-button class="fullscreen-button" big="true" @click=${toggleFullscreenCallback}>
         ${fullscreen ? "Exit Fullscreen" : "Fullscreen"}
       </gh-button>
     ` : html`

@@ -10,6 +10,9 @@ export interface HeroProps {
   theme?: "dark" | "light" | "primary";
 }
 
+/**
+ * [gh-hero] A hero component for standout text. Usually used on a homepage.
+ */
 export function Hero({ theme }: HeroProps, { useMemo }: ComponentHooks) {
   const { palette } = getTheme();
 

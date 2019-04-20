@@ -20,4 +20,8 @@ function IconAlert({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-alert", IconAlert);
+register("gh-icon-alert", IconAlert, {
+  size: {
+    type: String
+  }
+});

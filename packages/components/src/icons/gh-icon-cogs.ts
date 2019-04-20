@@ -21,4 +21,8 @@ function IconCogs({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-cogs", IconCogs);
+register("gh-icon-cogs", IconCogs, {
+  size: {
+    type: String
+  }
+});

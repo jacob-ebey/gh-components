@@ -41,27 +41,39 @@ export function Button({
   const colors = useMemo(() => {
     switch (theme) {
       case "dark": return outline ? {
-        fontHoverColor: "inherit"
+        fontHoverColor: "inherit",
+        bgHoverColor: "rgba(0, 0, 0, 0.05)",
+        fontColor: palette.dark,
+        borderColor: palette.dark
       } : {
-          bgColor: palette.dark,
-          fontColor: palette.white
-        };
+        bgColor: palette.dark,
+        fontColor: palette.white,
+        bgHoverColor: "rgba(1, 1, 1, 0.5)"
+      };
       case "light": return outline ? {
-
+        bgHoverColor: "rgba(0, 0, 0, 0.05)",
+        borderColor: palette.light
       } : {
-          bgColor: palette.light,
-          fontColor: palette.primary
-        };
+        bgColor: palette.light,
+        fontColor: palette.black,
+        bgHoverColor: "rgba(0, 0, 0, 0.05)",
+      };
       case "primary": return outline ? {
         bgColor: "transparent",
         bgHoverColor: "rgba(0, 0, 0, 0.05)",
-        borderColor: palette.primary
+        borderColor: palette.primary,
+        fontColor: palette.primary
       } : {
-          bgColor: palette.primary,
-          bgHoverColor: palette.primaryHover,
-          fontColor: palette.white
-        };
-      default: return {
+        bgColor: palette.primary,
+        bgHoverColor: palette.primaryHover,
+        fontColor: palette.white
+      };
+      default: return outline ? {
+        bgColor: "transparent",
+        bgHoverColor: "rgba(0, 0, 0, 0.05)",
+        fontColor: palette.primary,
+        borderColor: palette.light
+      } : {
         bgColor: "transparent",
         bgHoverColor: "rgba(0, 0, 0, 0.05)",
         fontColor: palette.primary
@@ -91,17 +103,19 @@ export function Button({
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        ${colors.borderColor ? `border-style: solid;` : ""}
-
         ${colors.bgColor ? `background-color: ${colors.bgColor};` : ""}
-        ${colors.borderColor ? `border-color: ${colors.borderColor};border-width: 3px;` : ""}
       }
 
       :host div, :host a {
         flex: 1;
-        padding: ${padding ? padding : big ? `1em` : `0.75em`};
         user-select: none;
-        border-radius: 3px;
+        padding: ${padding
+          ? padding
+          : big
+            ? (colors.borderColor ? "calc(1em - 3px)" : "1em")
+            : (colors.borderColor ? "calc(0.75em - 3px)" : "0.75em")};
+        ${colors.borderColor ? `border-style: solid;` : ""}
+        ${colors.borderColor ? `border-color: ${colors.borderColor};border-width: 3px;` : ""}
       }
 
       :host a {

@@ -24,7 +24,7 @@ export function ContentPage() {
 
       @media (max-width: ${breakpoints.tabletPortraitAndBelowMaxWidth}) {
         :host {
-          padding: 30px;
+          padding: 1em;
         }
       }
     </style>

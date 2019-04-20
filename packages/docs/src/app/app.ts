@@ -1,22 +1,30 @@
-import Navigo from "navigo";
-
 import { ComponentHooks, html, register, nothing } from "@gh-components/core";
+import { unsafeHTML } from "lit-html/directives/unsafe-html";
+import Navigo from "navigo";
 
 import "@gh-components/components/dist/gh-appbar";
 import "@gh-components/components/dist/gh-contentpage";
 import "@gh-components/components/dist/icons/gh-icon-github";
 import { getTheme } from "@gh-components/components/dist/theme";
-import docs from "@gh-components/components/dist/docs.json";
-
-console.log(docs);
 
 const router = new Navigo(undefined, true, "#");
 
-function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
+function App(_, { useCallback, useEffect, useMemo, useState }: ComponentHooks) {
   const { palette } = getTheme();
 
   const [reload, setReload] = useState(0);
-  const [route, setRoute] = useState(null);
+  const [route, setRouteRaw] = useState(null);
+  const [component, setComponent] = useState(null);
+
+  const setComponentRoute = useCallback((c) => {
+    setComponent(c);
+    setRouteRaw(`components/gh-${c}`);
+  });
+
+  const setRoute = useCallback((r) => {
+    setComponent(null);
+    setRouteRaw(r);
+  })
 
   useEffect(() => {
     router
@@ -51,7 +59,39 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
       .on("components", () => {
         import("./routes/components/gh-components");
         setRoute("components");
-      });
+      })
+      .on("components/gh-appbar", () => {
+        import("./routes/components/gh-docs-appbar");
+        setComponentRoute("appbar");
+      })
+      .on("components/gh-button", () => {
+        import("./routes/components/gh-docs-button");
+        setComponentRoute("button");
+      })
+      .on("components/gh-card", () => {
+        import("./routes/components/gh-docs-card");
+        setComponentRoute("card");
+      })
+      .on("components/gh-contentpage", () => {
+        import("./routes/components/gh-docs-contentpage");
+        setComponentRoute("contentpage");
+      })
+      .on("components/gh-hero", () => {
+        import("./routes/components/gh-docs-hero");
+        setComponentRoute("hero");
+      })
+      .on("components/gh-listmenu", () => {
+        import("./routes/components/gh-docs-listmenu");
+        setComponentRoute("listmenu");
+      })
+      .on("components/gh-stackblitz", () => {
+        import("./routes/components/gh-docs-stackblitz");
+        setComponentRoute("stackblitz");
+      })
+      .on("components/gh-warningcard", () => {
+        import("./routes/components/gh-docs-warningcard");
+        setComponentRoute("warningcard");
+      });;
 
     router.notFound(() => setRoute("not-found"));
 
@@ -73,10 +113,16 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
   }, [reload]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (route !== "components") {
+      window.scrollTo(0, 0);
+    }
   }, [route]);
 
   let content = useMemo(() => {
+    if (component) {
+      return unsafeHTML(`<gh-docs-${component}></gh-docs-${component}>`);
+    }
+
     switch (route) {
       case "home": return html`<gh-home></gh-home>`;
       case "try": return html`<gh-try></gh-try>`;
@@ -88,7 +134,7 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
       case "components": return html`<gh-components></gh-components>`;
       default: return nothing;
     }
-  }, [route]);
+  }, [component, route]);
 
   return html`
     <gh-appbar
@@ -99,7 +145,7 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
     >
       <gh-appbar-item href="#try">Try</gh-appbar-item>
       <gh-appbar-item href="#core">Core</gh-appbar-item>
-      <!-- <gh-appbar-item href="#components">Components</gh-appbar-item> -->
+      <gh-appbar-item href="#components">Components</gh-appbar-item>
       <gh-appbar-item href="https://github.com/jacob-ebey/gh-components"><gh-icon-github></gh-icon-github></gh-appbar-item>
     </gh-appbar>
     <main>
@@ -152,4 +198,4 @@ function App(_, { useEffect, useMemo, useState }: ComponentHooks) {
   `;
 }
 
-register("gh-docs", App);
+register("gh-components-docs", App);

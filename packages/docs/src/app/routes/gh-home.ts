@@ -33,7 +33,7 @@ function Home() {
 
   return html`
       <gh-hero>
-        <gh-hero-h1>GrowHub Components</gh-hero-h1>
+        <gh-hero-h1>GrowHub Components Suite</gh-hero-h1>
         <gh-hero-h2>A set of web components and a core library for you to build your own</gh-hero-h2>
       </gh-hero>
 

@@ -20,4 +20,8 @@ function IconAngleDown({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-angle-down", IconAngleDown);
+register("gh-icon-angle-down", IconAngleDown, {
+  size: {
+    type: String
+  }
+});

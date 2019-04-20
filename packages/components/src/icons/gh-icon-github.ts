@@ -21,4 +21,8 @@ function IconGithub({ size = "1.75em" }) {
   `;
 }
 
-register("gh-icon-github", IconGithub);
+register("gh-icon-github", IconGithub, {
+  size: {
+    type: String
+  }
+});
