@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@gh-components/docs",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,8 +13,8 @@
     "deploy": "gh-pages -d docs"
   },
   "dependencies": {
-    "@gh-components/components": "^0.0.1-alpha.1",
-    "@gh-components/core": "^0.0.1-alpha.1",
+    "@gh-components/components": "^0.0.1-alpha.2",
+    "@gh-components/core": "^0.0.1-alpha.2",
     "@kuscamara/code-sample": "^3.0.2",
     "@webcomponents/webcomponentsjs": "^1.0.0",
     "lit-html": "^1.0.0",
