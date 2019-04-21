@@ -1,5 +1,4 @@
-import { ComponentHooks, html, register, nothing } from "@gh-components/core";
-import { unsafeHTML } from "lit-html/directives/unsafe-html";
+import { ComponentHooks, html, register, nothing, unsafeHTML } from "@gh-components/core";
 import Navigo from "navigo";
 
 import "@gh-components/components/dist/gh-appbar";
@@ -93,7 +92,7 @@ function App(_, { useCallback, useEffect, useMemo, useState }: ComponentHooks) {
         setComponentRoute("warningcard");
       });;
 
-    router.notFound(() => setRoute("not-found"));
+    router.notFound(() => setComponentRoute("not-found"));
 
     router.resolve();
   }, [reload]);
@@ -135,6 +134,8 @@ function App(_, { useCallback, useEffect, useMemo, useState }: ComponentHooks) {
       default: return nothing;
     }
   }, [component, route]);
+
+  console.log(content);
 
   return html`
     <gh-appbar

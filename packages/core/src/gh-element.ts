@@ -1,4 +1,4 @@
-import { render } from "lit-html";
+import { render } from "lit-html/lit-html";
 import css from "shadow-css";
 import camelToKebabCase from "camel-to-kebab";
 import camelCase from "camelcase";

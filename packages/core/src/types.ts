@@ -1,5 +1,4 @@
 import { TemplateResult } from "lit-html";
-export * from "lit-html";
 
 export type State<T> = [T, (newValue: T) => void];
 export type UseStateFunc = <T = any>(initialValue: T) => State<T>;
