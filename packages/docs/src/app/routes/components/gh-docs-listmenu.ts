@@ -6,6 +6,8 @@ import "@gh-components/components/dist/gh-h2";
 import "@gh-components/components/dist/gh-h3";
 import docs from "@gh-components/components/dist/docs.json";
 
+import "./gh-component-page";
+
 function DocsListmenu() {
   return html`
     <gh-component-page>

@@ -6,7 +6,7 @@
     "build": "lerna run build --stream",
     "postinstall": "lerna bootstrap",
     "deploy-packages": "lerna publish -- --access public",
-    "version": "lerna version prerelease",
+    "version": "lerna version prerelease --yes",
     "deploy-sites": "lerna run deploy"
   },
   "dependencies": {
