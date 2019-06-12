@@ -3,7 +3,7 @@ import { TemplateResult } from "lit-html";
 export type State<T> = [T, (newValue: T) => void];
 export type UseStateFunc = <T = any>(initialValue: T) => State<T>;
 
-export type EffectFunc = (host: HTMLElement) => void | ((host: HTMLElement) => void);
+export type EffectFunc = (shadowRoot: ShadowRoot) => void | ((shadowRoot: ShadowRoot) => void);
 export type UseEffectFunc = (effect: EffectFunc, deps?: any[]) => void;
 
 export type MemoFunc<T> = () => T;

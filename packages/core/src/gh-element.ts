@@ -36,8 +36,8 @@ export const register = <TProps = {}>(
   const propertyKeys = (properties ? Object.getOwnPropertyNames(properties) : []);
 
   class GhElement extends ElementType {
-    private _afterRender: Array<(host: HTMLElement) => void>;
-    private _beforeRender: Array<(host: HTMLElement) => void>;
+    private _afterRender: Array<(host: ShadowRoot) => void>;
+    private _beforeRender: Array<(host: ShadowRoot) => void>;
 
     private _effects: Effect[];
     private _effectsIndex: number;
@@ -118,7 +118,7 @@ export const register = <TProps = {}>(
       this._effectsIndex = 0;
       this._statesIndex = 0;
 
-      this._beforeRender.forEach(f => f(this.shadowRoot.host));
+      this._beforeRender.forEach(f => f(this.shadowRoot));
       this._beforeRender = [];
     }
 
@@ -140,7 +140,7 @@ export const register = <TProps = {}>(
     }
 
     protected afterRender = () => {
-      this._afterRender.forEach(f => f(this.shadowRoot.host));
+      this._afterRender.forEach(f => f(this.shadowRoot));
 
       this._afterRender = [];
     }
@@ -150,12 +150,12 @@ export const register = <TProps = {}>(
       const lastEffect = this._effects[index] || { deps: [] };
 
       if (index >= this._effects.length || this.diffDeps(this._effects[index].deps, deps)) {
-        this._afterRender.push((host: HTMLElement) => {
+        this._afterRender.push((shadowRoot: ShadowRoot) => {
           if (lastEffect.cleanup) {
             lastEffect.cleanup();
           }
 
-          const cleanup: any = effect(host);
+          const cleanup: any = effect(shadowRoot);
           this._effects[index] = {
             deps,
             cleanup
